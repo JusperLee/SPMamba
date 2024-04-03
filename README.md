@@ -1,5 +1,9 @@
+# SPMamba: State-space model is all you need in speech separation
 
-# SPMamba: State-space model is all you need in separation task
+[![arXiv](https://img.shields.io/badge/arXiv-2404.02063-b31b1b.svg)](https://arxiv.org/abs/2404.02063)
+[![GitHub Stars](https://img.shields.io/github/stars/JusperLee/SPMamba?style=social)](https://github.com/JusperLee/SPMamba/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9.16-blue.svg)](https://www.python.org/)
 
 ## Introduction
 
@@ -13,17 +17,21 @@ This repository is implemented using the ESPnet framework, a comprehensive platf
 
 ## Installation
 
-To get started with SPMamba, you'll need to have ESPnet installed. Additionally, the Mamba environment is required to leverage the full capabilities of SPMamba. Follow these steps to set up your environment:
+clone the repository
 
-1. **Install ESPnet**: Follow the official [ESPnet installation guide](https://github.com/espnet/espnet#installation) to set up ESPnet on your system.
+```bash
+git clone https://github.com/JusperLee/SPMamba.git && cd SPMamba
+conda env create -f look2hear.yml
+conda activate look2hear
+```
 
-2. **Install Mamba**: After setting up ESPnet, install the Mamba environment by running the following command:
+## Usage
 
-   ```bash
-   pip install mamba
-   ```
+To train the SPMamba model, run the following command:
 
-   For more detailed instructions on installing Mamba, please refer to the [Mamba documentation](https://github.com/state-spaces/mamba).
+```bash
+python audio_train.py --conf_dir=configs/spmamba.yml
+```
 
 ## Performance
 
@@ -43,6 +51,23 @@ To get started with SPMamba, you'll need to have ESPnet installed. Additionally,
 ## License
 
 SPMamba is licensed under the Apache License 2.0. For more details, see the [LICENSE](LICENSE) file in the repository.
+
+## Acknowledgements
+
+SPMamba is developed by the Look2Hear team at Tsinghua University. We would like to thank the ESPnet team for their contributions to the open-source community and for providing a solid foundation for our work.
+
+## Citation
+
+If you use SPMamba in your research or project, please cite the following paper:
+
+```
+@article{li2024spmamba,
+  title={SPMamba: State-space model is all you need in speech separation},
+  author={Li, Kai and Chen Guo},
+  journal={arXiv preprint arXiv:2404.02063},
+  year={2024}
+}
+```
 
 ## Contact
 
