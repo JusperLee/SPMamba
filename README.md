@@ -48,6 +48,13 @@ python audio_train.py --conf_dir=configs/spmamba.yml
 | TF-GridNet   | 13.59| 13.70| 12.62  | 12.81   | 14.43     | 445.56     |
 | SPMamba   | 16.01| 16.14 | 15.20  | 15.33   | 6.14     | 78.69    |
 
+## SPMamba in WSJ0 and WHAM!
+
+### WSJ0
+
+<img width="1086" alt="image" src="https://github.com/JusperLee/SPMamba/assets/33806018/351e5a5e-9ad0-4b47-9784-db04530a759d">
+
+
 ## License
 
 SPMamba is licensed under the Apache License 2.0. For more details, see the [LICENSE](LICENSE) file in the repository.
