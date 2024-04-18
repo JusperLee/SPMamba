@@ -48,11 +48,16 @@ python audio_train.py --conf_dir=configs/spmamba.yml
 | TF-GridNet   | 13.59| 13.70| 12.62  | 12.81   | 14.43     | 445.56     |
 | SPMamba   | 16.01| 16.14 | 15.20  | 15.33   | 6.14     | 78.69    |
 
-## SPMamba in WSJ0 and WHAM!
+## SPMamba in Self-built, WSJ0 and WHAM!
+
+### Self-built
+
+<img width="1125" alt="image" src="https://github.com/JusperLee/SPMamba/assets/33806018/8ee9767d-035a-412b-9432-2dcd7515703f">
+
 
 ### WSJ0
 
-<img width="1086" alt="image" src="https://github.com/JusperLee/SPMamba/assets/33806018/351e5a5e-9ad0-4b47-9784-db04530a759d">
+<img width="1130" alt="image" src="https://github.com/JusperLee/SPMamba/assets/33806018/754cdfbf-ccc9-46f5-a9b5-d9605a04dee4">
 
 
 ## License
