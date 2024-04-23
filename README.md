@@ -5,6 +5,13 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9.16-blue.svg)](https://www.python.org/)
 
+## 🔥 News
+
+[2024-04-23] Update SPMamba MACs: **238.21 G/s** using [code](https://github.com/state-spaces/mamba/issues/110)
+
+[2024-04-18] Update SPMamba **WSJ0-2Mix** Result
+
+
 ## Introduction
 
 SPMamba revolutionizes the field of speech separation tasks by leveraging the power of Mamba in conjunction with the robust TF-GridNet infrastructure. By replacing the conventional bidirectional LSTM with a more efficient and effective bidirectional Mamba model, SPMamba sets a new standard for accuracy and performance in speech separation.
@@ -46,7 +53,7 @@ python audio_train.py --conf_dir=configs/spmamba.yml
 | TDANet       | 9.93 | 10.14| 8.95   | 9.21    | 2.33      | 9.13       |
 | BSRNN        | 12.64| 12.75| 12.04  | 12.23   | 25.97     | 98.69      |
 | TF-GridNet   | 13.59| 13.70| 12.62  | 12.81   | 14.43     | 445.56     |
-| SPMamba   | 16.01| 16.14 | 15.20  | 15.33   | 6.14     | 78.69    |
+| SPMamba   | 16.01| 16.14 | 15.20  | 15.33   | 6.14     | 238.21    |
 
 ## SPMamba in Self-built, WSJ0 and WHAM!
 
