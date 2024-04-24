@@ -79,15 +79,18 @@ with torch.cuda.device(3):
         )
     # print(model(a).shape)
     total_macs += macs
-    
+
+    # selective_scan
     macs = selective_scan_flop_jit() * 24 
     
     total_macs += macs
-    
+
+    # in_proj
     macs = 24 * 120 * 10 ** 6 
     
     total_macs += macs
-    
+
+    # dt_proj
     macs = 24 * 4.12 * 10 ** 9
     
     total_macs += macs
