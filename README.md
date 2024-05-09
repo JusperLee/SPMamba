@@ -7,9 +7,11 @@
 
 ## 🔥 News
 
+[2024-05-09] Update SPMamba **WHAM!** Result: SI-SNRi=17.4 dB, SDRi=17.6 dB
+
 [2024-04-23] Update SPMamba MACs: **238.21 G/s** using [code](https://github.com/state-spaces/mamba/issues/110)
 
-[2024-04-18] Update SPMamba **WSJ0-2Mix** Result
+[2024-04-18] Update SPMamba **WSJ0-2Mix** Result: SI-SNRi=22.5 dB, SDRi=22.7 dB
 
 
 ## Introduction
