@@ -5,7 +5,7 @@
 <p align="center">
   <strong>Kai Li<sup>1</sup>, Guo Chen<sup>1</sup>, Xiaolin Hu<sup>1</sup></strong><br>
     <strong><sup>1</sup>Tsinghua University, China</strong><br>
-  <a href="[#](https://arxiv.org/abs/2404.02063)">ArXiv</a> | <a href="https://cslikai.cn/SPMamba/">Demo</a>
+  <a href="https://arxiv.org/abs/2404.02063">ArXiv</a> | <a href="https://cslikai.cn/SPMamba/">Demo</a>
 
 <p align="center">
   <img src="https://visitor-badge.laobi.icu/badge?page_id=JusperLee.SPMamba" alt="访客统计" />
