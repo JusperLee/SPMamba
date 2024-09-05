@@ -61,7 +61,7 @@ scheduler:
 
 # Data config
 datamodule:
-  data_name: MP3DDataModule
+  data_name: Echo2MixDataModule
   data_config:
     train_dir: DataPreProcess/train
     valid_dir: DataPreProcess/val
@@ -76,4 +76,4 @@ datamodule:
     persistent_workers: false
 
 exp:
-  exp_name: SPMamba-Mono
+  exp_name: SPMamba-Echo2Mix

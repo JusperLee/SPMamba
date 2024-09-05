@@ -11,7 +11,6 @@ from typing import Any, Tuple
 import soundfile as sf
 import torch
 from pytorch_lightning import LightningDataModule
-# from pytorch_lightning.core.mixins import HyperparametersMixin
 from torch.utils.data import ConcatDataset, DataLoader, Dataset
 from typing import Dict, Iterable, List, Iterator
 from rich import print
@@ -30,7 +29,7 @@ def normalize_tensor_wav(wav_tensor, eps=1e-8, std=None):
     return (wav_tensor - mean) / (std + eps)
 
 
-class MP3DDataset(Dataset):
+class Echo2MixDataset(Dataset):
     def __init__(
         self,
         json_dir: str = "",
@@ -184,7 +183,7 @@ class MP3DDataset(Dataset):
         return self.preprocess_audio_only(index)
 
 
-class MP3DDataModule(object):
+class Echo2MixDataModule(object):
     def __init__(
         self,
         train_dir: str,
@@ -223,21 +222,21 @@ class MP3DDataModule(object):
         self.data_test: Dataset = None
 
     def setup(self) -> None:
-        self.data_train = MP3DDataset(
+        self.data_train = Echo2MixDataset(
             json_dir=self.train_dir,
             n_src=self.n_src,
             sample_rate=self.sample_rate,
             segment=self.segment,
             normalize_audio=self.normalize_audio,
         )
-        self.data_val = MP3DDataset(
+        self.data_val = Echo2MixDataset(
             json_dir=self.valid_dir,
             n_src=self.n_src,
             sample_rate=self.sample_rate,
             segment=None,
             normalize_audio=self.normalize_audio,
         )
-        self.data_test = MP3DDataset(
+        self.data_test = Echo2MixDataset(
             json_dir=self.test_dir,
             n_src=self.n_src,
             sample_rate=self.sample_rate,

@@ -1,19 +1,37 @@
+<p align="center">
+  <img src="asserts/SPMamba.png" alt="Logo" width="150"/>
+</p>
+
+<p align="center">
+  <strong>Kai Li<sup>1</sup>, Guo Chen<sup>1</sup>, Xiaolin Hu<sup>1</sup></strong><br>
+    <strong><sup>1</sup>Tsinghua University, China</strong><br>
+  <a href="[#](https://arxiv.org/abs/2404.02063)">ArXiv</a> | <a href="https://cslikai.cn/SPMamba/">Demo</a>
+
+<p align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=JusperLee.SPMamba" alt="访客统计" />
+  <img src="https://img.shields.io/github/stars/JusperLee/SPMamba?style=social" alt="GitHub stars" />
+  <img alt="Static Badge" src="https://img.shields.io/badge/license-Apache--2.0-blue">
+</p>
+
+<p align="center">
+
 # SPMamba: State-space model is all you need in speech separation
 
-[![arXiv](https://img.shields.io/badge/arXiv-2404.02063-b31b1b.svg)](https://arxiv.org/abs/2404.02063)
-[![GitHub Stars](https://img.shields.io/github/stars/JusperLee/SPMamba?style=social)](https://github.com/JusperLee/SPMamba/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.9.16-blue.svg)](https://www.python.org/)
+## Abstract
 
-## Introduction
+SPMamba is an innovative speech separation model designed to address the complexity of modeling long audio sequences in existing LSTM and Transformer-based systems. Building on the robust TF-GridNet architecture, SPMamba replaces traditional BLSTM components with bidirectional Mamba modules, which efficiently capture spatiotemporal relationships in both time and frequency dimensions. This allows the model to handle long-range dependencies with linear computational complexity. By leveraging bidirectional processing, SPMamba enhances separation performance by utilizing both past and future context. Extensive experiments on datasets such as **WSJ0-2Mix, WHAM!, Libri2Mix**, and the newly constructed **Echo2Mix** demonstrated that SPMamba not only outperformed state-of-the-art models but also reduced computational complexity.
 
-SPMamba revolutionizes the field of speech separation tasks by leveraging the power of Mamba in conjunction with the robust TF-GridNet infrastructure. By replacing the conventional bidirectional LSTM with a more efficient and effective bidirectional Mamba model, SPMamba sets a new standard for accuracy and performance in speech separation.
+## 🔥 News
 
-Built upon the open-source ESPnet framework, SPMamba offers a seamless experience for users looking to train their models with cutting-edge technology. Whether you're a researcher, developer, or enthusiast in the field of speech processing, SPMamba provides the tools and flexibility needed to achieve unparalleled results.
+[2024-09-06] Demo Website SPMamba is now available at [[Demo]](https://cslikai.cn/SPMamba/)
 
-## Technology Stack
+[2024-09-06] Release Datasets Echo2Mix, a new dataset for speech separation. [[DataEcho2Mix]](https://drive.google.com/file/d/1nJ9ujAbf4LxXEFzFwEpr9CwJOeNHghw0/view)
 
-This repository is implemented using the ESPnet framework, a comprehensive platform for speech processing. SPMamba enhances ESPnet by integrating Mamba, a state-of-the-art state-space model, into the TF-GridNet architecture. This combination allows for significant improvements in speech separation tasks.
+[2024-05-09] Update SPMamba **WHAM!** Result: SI-SNRi=17.4 dB, SDRi=17.6 dB
+
+[2024-04-23] Update SPMamba MACs: **238.21 G/s** using [[code]](https://github.com/state-spaces/mamba/issues/110)
+
+[2024-04-18] Update SPMamba **WSJ0-2Mix** Result: SI-SNRi=22.5 dB, SDRi=22.7 dB
 
 ## Installation
 
@@ -35,18 +53,9 @@ python audio_train.py --conf_dir=configs/spmamba.yml
 
 ## Performance
 
-*Here, you can include a brief overview of the performance metrics or results that SPMamba achieves using own private datasets.*
+*Here, you can include a brief overview of the performance metrics or results that SPMamba achieves using WSJ0-2Mix, WHAM!, Libri2Mix, Echo2Mix*
 
-| Model        | SDR  | SDRi | SI-SNR | SI-SNRi | Params(M) | Macs (G/s) |
-|--------------|------|------|--------|---------|-----------|------------|
-| Conv-TasNet  | 7.58 | 7.69 | 6.71   | 6.89    | 5.62      | 10.23      |
-| DualPathRNN  | 5.76 | 5.87 | 4.88   | 5.06    | 2.72      | 85.32      |
-| SudoRM-RF    | 7.59 | 7.70 | 6.66   | 6.84    | 2.72      | 4.60       |
-| A-FRCNN      | 9.53 | 9.64 | 8.58   | 8.76    | 6.13      | 81.20      |
-| TDANet       | 9.93 | 10.14| 8.95   | 9.21    | 2.33      | 9.13       |
-| BSRNN        | 12.64| 12.75| 12.04  | 12.23   | 25.97     | 98.69      |
-| TF-GridNet   | 13.59| 13.70| 12.62  | 12.81   | 14.43     | 445.56     |
-| SPMamba   | 16.01| 16.14 | 15.20  | 15.33   | 6.14     | 78.69    |
+![](./asserts/results.png)
 
 ## License
 
@@ -54,7 +63,7 @@ SPMamba is licensed under the Apache License 2.0. For more details, see the [LIC
 
 ## Acknowledgements
 
-SPMamba is developed by the Look2Hear team at Tsinghua University. We would like to thank the ESPnet team for their contributions to the open-source community and for providing a solid foundation for our work.
+SPMamba is developed by the **Look2Hear** at Tsinghua University. We would like to thank the **ESPnet team** for their contributions to the open-source community and for providing a solid foundation for our work.
 
 ## Citation
 
@@ -63,7 +72,7 @@ If you use SPMamba in your research or project, please cite the following paper:
 ```
 @article{li2024spmamba,
   title={SPMamba: State-space model is all you need in speech separation},
-  author={Li, Kai and Chen Guo},
+  author={Li, Kai and Chen, Guo and Hu, Xiaolin},
   journal={arXiv preprint arXiv:2404.02063},
   year={2024}
 }
@@ -71,4 +80,4 @@ If you use SPMamba in your research or project, please cite the following paper:
 
 ## Contact
 
-For any questions or feedback regarding SPMamba, feel free to reach out to us via email: tsinghua.kaili@gmail.com
+For any questions or feedback regarding SPMamba, feel free to reach out to us via email: `tsinghua.kaili@gmail.com`

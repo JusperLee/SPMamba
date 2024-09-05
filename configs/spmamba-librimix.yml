@@ -1,0 +1,79 @@
+# Network config
+audionet:
+  audionet_name: SPMamba
+  audionet_config:
+    input_dim: 64
+    n_srcs: 2
+    n_fft: 256
+    stride: 64
+    window: hann
+    n_imics: 1
+    n_layers: 6
+    lstm_hidden_units: 256
+    attn_n_head: 4
+    attn_approx_qk_dim: 512
+    emb_dim: 16
+    emb_ks: 8
+    emb_hs: 1
+    activation: prelu
+    eps: 1.0e-5
+    use_builtin_complex: False
+
+# Loss config
+loss:
+  train:
+    loss_func: PITLossWrapper
+    sdr_type: pairwise_neg_snr
+    config:
+      pit_from: pw_mtx
+      threshold_byloss: false
+  val:
+    loss_func: PITLossWrapper
+    sdr_type: pairwise_neg_sisdr
+    config:
+      pit_from: pw_mtx
+      threshold_byloss: false
+
+training:
+  system: AudioLightningModule
+  gpus: [1,2,3,4,5,6,7]
+  parallel: ddp
+  epochs: 500
+  early_stop:
+    monitor: val_loss/dataloader_idx_0
+    mode: min
+    patience: 20
+    verbose: true
+  SpeedAug: False
+  
+# Optim config
+optimizer:
+  optim_name: adam
+  lr: 0.001
+  weight_decay: 0
+
+# Sche config
+scheduler: 
+  sche_name: ReduceLROnPlateau
+  sche_config:
+    patience: 10
+    factor: 0.5
+
+# Data config
+datamodule:
+  data_name: Libri2MixDataModule
+  data_config:
+    train_dir: DataPreProcess/Libri2Mix/train-100
+    valid_dir: DataPreProcess/Libri2Mix/dev
+    test_dir: DataPreProcess/Libri2Mix/test
+    n_src: 2
+    sample_rate: 8000
+    segment: 3.0
+    normalize_audio: false
+    batch_size: 1
+    num_workers: 8
+    pin_memory: true
+    persistent_workers: false
+
+exp:
+  exp_name: SPMamba-Libri2Mix

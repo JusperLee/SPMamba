@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+	<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+	<!-- <link rel="stylesheet" href="./static/css/bulma.min.css"> -->
+	<link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+	<link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+	<!-- <link rel="stylesheet" href="./static/css/fontawesome.all.min.css"> -->
+	<!-- <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+	<link rel="stylesheet" href="./static/css/index.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script defer src="./static/js/fontawesome.all.min.js"></script>
+	<script src="./static/js/bulma-carousel.min.js"></script>
+	<script src="./static/js/bulma-slider.min.js"></script>
+	<script src="./static/js/index.js"></script>
+	<script>(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	<script>window.twttr = (function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0],
+				t = window.twttr || {};
+			if (d.getElementById(id)) return t;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+
+			t._e = [];
+			t.ready = function (f) {
+				t._e.push(f);
+			};
+
+			return t;
+		}(document, "script", "twitter-wjs"));</script>
+	<style type="text/css">
+		body {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			font-weight: 300;
+			font-size: 18px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 1100px;
+		}
+
+		h1 {
+			font-size: 32px;
+			font-weight: 300;
+		}
+
+		.disclaimerbox {
+			background-color: #eee;
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			padding: 20px;
+		}
+
+		video.header-vid {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		img.header-img {
+			height: 140px;
+			border: 1px solid black;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		img.rounded {
+			border: 1px solid #eeeeee;
+			border-radius: 10px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+		}
+
+		a:link,
+		a:visited {
+			color: #1367a7;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #208799;
+		}
+
+		td.dl-link {
+			height: 160px;
+			text-align: center;
+			font-size: 22px;
+		}
+
+		code {
+			display: block;
+			white-space: pre-wrap font-family: Consolas, "courier new";
+			color: crimson;
+			background-color: #f1f1f1;
+			padding: 2px;
+			font-size: 105%;
+		}
+
+		pre {
+			font-family: monospace;
+		}
+
+		.layered-paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The third layer shadow */
+				15px 15px 0 0px #fff,
+				/* The fourth layer */
+				15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fourth layer shadow */
+				20px 20px 0 0px #fff,
+				/* The fifth layer */
+				20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The fifth layer shadow */
+				25px 25px 0 0px #fff,
+				/* The fifth layer */
+				25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The fifth layer shadow */
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+
+		.paper-big {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The top layer shadow */
+
+			margin-left: 10px;
+			margin-right: 45px;
+		}
+
+
+		.layered-paper {
+			/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+			box-shadow:
+				0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The top layer shadow */
+				5px 5px 0 0px #fff,
+				/* The second layer */
+				5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+				/* The second layer shadow */
+				10px 10px 0 0px #fff,
+				/* The third layer */
+				10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+			/* The third layer shadow */
+			margin-top: 5px;
+			margin-left: 10px;
+			margin-right: 30px;
+			margin-bottom: 5px;
+		}
+
+		.vert-cent {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		hr {
+			border: 0;
+			height: 1px;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	</style>
+
+	<html>
+
+	<head>
+		<title>SPMamba: State-space model is all you need in speech separation</title>
+		<meta property="og:image" content="./images/paper.png" />
+		<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+		<meta property="og:title" content="SPMamba: State-space model is all you need in speech separation" />
+		<meta property="og:description"
+			content="SPMamba revolutionizes the field of speech separation tasks by leveraging the power of Mamba in conjunction with the robust TF-GridNet infrastructure. By replacing the conventional bidirectional LSTM with a more efficient and effective bidirectional Mamba model, SPMamba sets a new standard for accuracy and performance in speech separation.	" />
+
+		<script async src=""></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-75863369-6');
+		</script>
+		<link rel="icon" type="image/png"
+			href="https://cdn2.iconfinder.com/data/icons/ios-14-custom-application/62/application-38-512.png" />
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
+	</head>
+
+<body>
+	<script type="text/javascript" src="script.js"></script>
+	<br>
+	<center>
+		<!-- <img class="round" style="width:500px" src="./images/CPM/cvpr.jpg"/> -->
+		<!-- <br/> -->
+		<!-- <br/> -->
+		<!-- <hr> -->
+		<span style="font-size:36px">SPMamba: State-space model is all you need in speech separation</span>
+		<br>
+		<!-- <hr> -->
+		<!-- </br> -->
+		<!-- <span style="font-size:22px; color:#011B56;">━ <a href="https://openaccess.thecvf.com/CVPR2021">CVPR 2021</a> ━</span> -->
+
+		<!-- <br></br> -->
+		<span style="font-size:24px; color:#011B56;">━ <a href="#">Arxiv 2024</a> ━</span>
+		<table align=center width=750px>
+			<table align=center width=375px>
+				<tr>
+					<td align=center width=150px>
+						<center>
+							<span style="font-size:22px"><a href="https://cslikai.cn">Kai Li</a></span>
+						</center>
+					</td>
+					<td align=center width=150px>
+						<center>
+							<span style="font-size:22px"><a href="https://cslikai.cn">Guo Chen</a></span>
+						</center>
+					</td>
+					<td align=center width=150px>
+						<center>
+							<span style="font-size:22px"><a href="https://www.xlhu.cn/">Xiaolin Hu</a></span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<table align=center width=700px>
+				<tr>
+					<td align=center>
+						<center>
+							<span style="font-size:20px"><a href="https://www.cs.tsinghua.edu.cn/">Tsinghua University
+									🐍</a>
+								<!-- <img class="img" width=100px src="./images/vinai-logo.png"></img> -->
+							</span>
+						</center>
+					</td>
+				</tr>
+			</table>
+			<table align=center width=600px>
+				<tr>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:22px"><a href='https://arxiv.org/pdf/2404.02063'>[arXiv
+									📝]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:22px"><a href='https://github.com/JusperLee/SPMamba'>[code
+									⚙️]</a></span><br>
+						</center>
+					</td>
+					<td align=center, width=120px>
+						<center>
+							<span style="font-size:22px"><a href='#'>[poster 🖼️]</a></span><br>
+
+						</center>
+					</td>
+					<td align=center, width=120px>
+						<center>
+							<span style="font-size:22px"><a href='https://drive.google.com/file/d/1nJ9ujAbf4LxXEFzFwEpr9CwJOeNHghw0/view'>[Echo2Mix 🗂️]</a></span><br>
+
+						</center>
+					</td>
+				</tr>
+			</table>
+		</table>
+		<!-- <hr> -->
+	</center>
+	<br>
+	<center>
+		<img class="round" style="width:200px" src="./asserts/SPMamba.png" />
+		<!-- <p style="max-width:750px;">Given an edit specified by users in <a style="color:red;">an example image</a> (e.g., dog pose),<br>Our method can <a style="color:green;"><b>automatically</b> transfer that edit to other test images</a> (e.g., all dog same pose).</p> -->
+		<p style="max-width:750px;">The <a style="color:red;">bidirectional Mamba layers</a> process both forward and
+			backward sequences, allowing SPMamba to use both <a style="color:green;">past and future information</a>,
+			which improves separation performance.</p>
+	</center>
+	<hr>
+	<table align=center width=850px>
+		<center>
+			<h1>Abstract</h1>
+		</center>
+		<tr>
+			<td style="text-align: justify;">
+				<a style="color:blue;">Existing speech separation models based on LSTM and Transformer face the high
+					complexity of long audio that is difficult to model effectively</a>. To address this challenges, we
+				introduce an innovative speech separation method called SPMamba. This model builds upon the robust
+				TF-GridNet architecture, replacing its traditional BLSTM components with bidirectional Mamba modules.
+				These modules effectively model the spatiotemporal relationships between the time and frequency
+				dimensions, allowing SPMamba to capture long-range dependencies with linear computational complexity.
+				Specifically, <a style="background-color:LightYellow;color:red">the bidirectional processing within the
+					Mamba modules enables the model to utilize both past and future contextual information, thereby
+					enhancing separation performance</a>. Extensive experiments conducted on public datasets, including
+				WSJ0-2Mix, WHAM!, and Libri2Mix, as well as the newly constructed Echo2Mix dataset, demonstrated that
+				SPMamba significantly outperformed existing state-of-the-art models, achieving superior results while
+				also reducing computational complexity. These findings highlighted the effectiveness of SPMamba in
+				tackling the intricate challenges of speech separation in complex environments.
+			</td>
+		</tr>
+	</table>
+	<br>
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:1000px" src="./asserts/Structure.png" />
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td>
+					An overview of the proposed <a style="color:rgb(255, 136, 0);">SPMamba model</a> and <a
+						style="color:rgb(187, 0, 255);">BMamba layer</a>. The BMamba layer processes both forward and
+					backward audio sequences. "LN" denotes the layer normalization, and "CLN" denotes the cumulative
+					layer normalization..
+				</td>
+			</tr>
+		</table>
+	</center>
+	<hr>
+
+	<!-- 	<div class=figure>
+		<center>
+			<p><img class="round" style='width: 900px' src='./images/interactive/Slide1.png'>
+			<figcaption>As users adjust the editing strength in the example image (top row), all test images will be automatically updated. (Red bounding boxes indicate the edit according to the drag points).</figcaption>
+		</center>
+	</div> -->
+	<center>
+		<h1>Comparison with State-of-the-art Models</h1>
+	</center>
+	<center>
+		<p><img class="round" style='width: 900px' src='./asserts/results.png'>
+		<figcaption>The experimental results demonstrated that the proposed SPMamba method achieved the SOTA performance
+			across multiple metrics. On the more complex Echo2Mix dataset, SPMamba achieved an SDRi of <b><a
+					style="color: hotpink;"> 16.1 dB </a></b> and an SI-SNRi of <b><a style="color: hotpink;"> 15.3 dB
+				</a></b>, setting the current state-of-the-art (SOTA) performance and significantly improving over other
+			traditional methods.</figcaption>
+	</center>
+	<!-- 		<center>
+		<video height="240" controls>
+			<source src="./images/video/face.mp4" type="video/mp4">
+			<source src="movie.ogg" type="video/ogg">
+			</video>
+		</center> -->
+	<hr>
+
+	<!-- <br>
+ -->
+	<center>
+		<h1>Complexity of SPMamba and TF-GridNet</h1>
+	</center>
+	<center>
+		<p><img class="round" style='width: 1000px' src='./asserts/times.png'>
+		<figcaption>SPMamba significantly outperformed TF-GridNet regarding GPU memory usage and inference time,
+			demonstrating the efficiency of SPMamba in long speech separation tasks.</figcaption>
+	</center>
+	<hr>
+	<!-- <br>
+ -->
+	<center>
+		<h1>Audio Demo</h1>
+	</center>
+	<center>
+		<h3 style="font-weight: bold; color: #ECAEA7">Demo One</h3>
+		<table class="table table-hover pt-2">
+			<thead>
+				<tr>
+					<th style="text-align: center">Index</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">SPMamba</th>
+					<th style="text-align: center">TF-GridNet</th>
+					<th style="text-align: center">BSRNN</th>
+					<th style="text-align: center">TDANet</th>
+					<th style="text-align: center">A-FRCNN</th>
+					<th style="text-align: center">SuDORM-RF</th>
+					<th style="text-align: center">Conv-TasNet</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK A</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/1221_3575/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/1221_3575/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK B</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/1221_3575/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/1221_3575/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</center>
+	<center>
+		<h3 style="font-weight: bold; color: #ECAEA7">Demo Two</h3>
+		<table class="table table-hover pt-2">
+			<thead>
+				<tr>
+					<th style="text-align: center">Index</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">SPMamba</th>
+					<th style="text-align: center">TF-GridNet</th>
+					<th style="text-align: center">BSRNN</th>
+					<th style="text-align: center">TDANet</th>
+					<th style="text-align: center">A-FRCNN</th>
+					<th style="text-align: center">SuDORM-RF</th>
+					<th style="text-align: center">Conv-TasNet</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK A</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/1995_1320/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/1995_1320/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK B</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/1995_1320/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/1995_1320/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</center>
+	<center>
+		<h3 style="font-weight: bold; color: #ECAEA7">Demo Three</h3>
+		<table class="table table-hover pt-2">
+			<thead>
+				<tr>
+					<th style="text-align: center">Index</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">SPMamba</th>
+					<th style="text-align: center">TF-GridNet</th>
+					<th style="text-align: center">BSRNN</th>
+					<th style="text-align: center">TDANet</th>
+					<th style="text-align: center">A-FRCNN</th>
+					<th style="text-align: center">SuDORM-RF</th>
+					<th style="text-align: center">Conv-TasNet</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK A</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/4992_908/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/4992_908/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK B</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/4992_908/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/4992_908/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</center>
+	<center>
+		<h3 style="font-weight: bold; color: #ECAEA7">Demo Four</h3>
+		<table class="table table-hover pt-2">
+			<thead>
+				<tr>
+					<th style="text-align: center">Index</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">SPMamba</th>
+					<th style="text-align: center">TF-GridNet</th>
+					<th style="text-align: center">BSRNN</th>
+					<th style="text-align: center">TDANet</th>
+					<th style="text-align: center">A-FRCNN</th>
+					<th style="text-align: center">SuDORM-RF</th>
+					<th style="text-align: center">Conv-TasNet</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK A</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/7176_1580/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/7176_1580/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK B</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/7176_1580/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/7176_1580/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</center>
+	<center>
+		<h3 style="font-weight: bold; color: #ECAEA7">Demo Five</h3>
+		<table class="table table-hover pt-2">
+			<thead>
+				<tr>
+					<th style="text-align: center">Index</th>
+					<th style="text-align: center">Ground Truth</th>
+					<th style="text-align: center">SPMamba</th>
+					<th style="text-align: center">TF-GridNet</th>
+					<th style="text-align: center">BSRNN</th>
+					<th style="text-align: center">TDANet</th>
+					<th style="text-align: center">A-FRCNN</th>
+					<th style="text-align: center">SuDORM-RF</th>
+					<th style="text-align: center">Conv-TasNet</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK A</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/8555_4507/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/8555_4507/s1.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;vertical-align:middle;width: 800px">
+						<p>SPK B</p>
+					</td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/gt/8555_4507/spk1_reverb.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/spmamba/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tfgnet/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/bsrnn/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio
+							element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source
+								src="./asserts/audios/tdanet/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/afrcnn/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/sudormrf/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+					<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls"
+							style="width: 140px;">
+							<source src="./asserts/audios/convtasnet/8555_4507/s2.wav"
+								autoplay="">Your browser does not support the audio element.
+						</audio></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</center>
+	<!-- <br> -->
+	<!-- <br> -->
+	<hr>
+	<table align=center width=800px>
+		<tr style="font-size:20px">
+			<td><i>➥ <a href="https://arxiv.org/pdf/2404.02063">BibTeX</a>:</i></td>
+		</tr>
+		<tr style="background-color:#E2E2E2;font-family:'monospace';font-size:18px;">
+			<td>
+				<!-- <br> -->
+				@article{li2024spmamba,<br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp title={Spmamba: State-space model is all you need in speech separation},<br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp author={Li, Kai and Chen, Guo and Hu, Xiaolin},<br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp year={2024},<br>
+				&nbsp&nbsp&nbsp&nbsp&nbsp journal={arXiv preprint arXiv:2404.02063}<br>
+				&nbsp&nbsp&nbsp}
+				<br>
+			</td>
+		</tr>
+	</table>
+
+	<!-- <hr> -->
+	<!-- <br> -->
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center>
+						<h1>Acknowledgements</h1>
+					</center>
+					Website template was borrowed from <a href="http://richzhang.github.io/colorization/">Colorful Image
+						Colorization</a> and <a href="https://nerfies.github.io/">Nerfies</a>; the code can be found <a
+						href="https://github.com/richzhang/webpage-template">here</a> and <a
+						href="https://github.com/nerfies/nerfies.github.io">here</a>. Thank you (.❛ ᴗ ❛.).
+				</left>
+			</td>
+		</tr>
+	</table>
+
+	<center>
+		<a href="javascript:toggleblock('notice')" style="text-align:center;font-size:70%;color:#808080">▶ cslikai.cn's
+			clustrmaps 🌎</a>.
+		<div id="notice" style="display:none; color:#dedede; font-size:.5em;">
+			<p>
+				<a href="https://clustrmaps.com/site/1c15l" title="Visit tracker"><img
+						src="//www.clustrmaps.com/map_v2.png?d=UogmwI4EaVSc9nUChSGSTyJya_R71cIttbqBfmOvDMc&cl=ffffff" /></a>
+			</p>
+		</div>
+	</center>
+	<br>
+</body>
+
+</html>

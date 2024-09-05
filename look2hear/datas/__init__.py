@@ -4,8 +4,12 @@
 # LastEditors: Please set LastEditors
 # LastEditTime: 2022-07-29 06:23:03
 ###
-from .mp3ddatamodule import MP3DDataModule
+from .echo2mix_datamodule import Echo2MixDataModule
+from .libri2mixdatamodule import Libri2MixDataModule
+from .whamdatamodule import WhamDataModule
 
 __all__ = [
-    "MP3DDataModule",
+    "Echo2MixDataModule",
+    "Libri2MixDataModule",
+    "WhamDataModule",
 ]
