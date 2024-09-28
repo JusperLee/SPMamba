@@ -13,10 +13,11 @@ from packaging.version import parse as V
 from torch_complex.tensor import ComplexTensor
 is_torch_1_9_plus = V(torch.__version__) >= V("1.9.0")
 
-from stft_tfgn import Stft
-from complex_utils import is_torch_complex_tensor
-from complex_utils import new_complex_like
-from get_layer_from_string import get_layer
+from ..layers import Stft
+from ..utils.complex_utils import is_torch_complex_tensor
+from ..utils.complex_utils import new_complex_like
+from ..utils.get_layer_from_string import get_layer
+from .base_model import BaseModel
 
 from functools import partial
 from mamba_ssm.modules.mamba_simple import Mamba, Block
@@ -400,7 +401,7 @@ class STFTDecoder(AbsDecoder):
 
 
 
-class SPMamba(nn.Module):
+class SPMamba(BaseModel):
     def __init__(
         self,
         input_dim,
