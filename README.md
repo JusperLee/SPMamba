@@ -23,6 +23,8 @@ SPMamba is an innovative speech separation model designed to address the complex
 
 ## 🔥 News
 
+[2024-11-22] Release Checkpoint SPMamba model checkpoint is available at [[Checkpoint]](https://github.com/JusperLee/SPMamba/releases/tag/v1.0)
+
 [2024-09-06] Demo Website SPMamba is now available at [[Demo]](https://cslikai.cn/SPMamba/)
 
 [2024-09-06] Release Datasets Echo2Mix, a new dataset for speech separation. [[DataEcho2Mix]](https://drive.google.com/file/d/1nJ9ujAbf4LxXEFzFwEpr9CwJOeNHghw0/view)
